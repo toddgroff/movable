@@ -1,0 +1,21 @@
+.thumbnail-container {
+    float: left;
+    overflow: scroll;
+    height: 28em;
+    border: 1px solid gray;
+    padding: 1em;
+    margin: 2em;
+}
+
+.thumbnail,
+.reordering {
+    width: 10em;
+    height: 6em;
+    background-color: gray;
+    margin-bottom: 1em;
+}
+
+.reordering {
+    box-shadow: 2px 2px 2px blue;
+    background-color: blue;
+}
