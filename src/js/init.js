@@ -1,3 +1,0 @@
-app.showInitialPage();
-
-app.reorderItems();
