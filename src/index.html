@@ -4,17 +4,47 @@
     <meta charset="utf-8">
     <title>Presentation App</title>
     <link rel="stylesheet" href="css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700,900,400italic,300italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <div class="thumbnail-container">
-    <h2>Slides</h1>
-        <div class="thumbnail slide-b reorderable"></div>
-        <div class="thumbnail slide-b reorderable"></div>
-        <div class="thumbnail slide-c reorderable"></div>
-        <div class="thumbnail slide-d reorderable"></div>
-        <div class="thumbnail slide-e reorderable"></div>
-        <div class="thumbnail slide-f reorderable"></div>
+    <div class="slide-editor">
+        <header class="thumbnail-header">
+            <h2 class="list-title">Slides</h2>
+        </header>
+        <div class="thumbnail-container">
+            <ul class="thumbnail-list">
+                <li class="reorderable">
+                    <span class="slide-number"></span>
+                    <div class="thumbnail">this</div>
+                </li>
+                <li class="reorderable">
+                    <span class="slide-number"></span>
+                    <div class="thumbnail">that</div>
+                </li>
+                <li class="reorderable">
+                    <span class="slide-number"></span>
+                    <div class="thumbnail">like</div>
+                </li>
+                <li class="reorderable">
+                    <span class="slide-number"></span>
+                    <div class="thumbnail">this too</div>
+                </li>
+                <li class="reorderable">
+                    <span class="slide-number"></span>
+                    <div class="thumbnail">and that</div>
+                </li>
+            </ul>
+        </div>
+        <div class="slide-view">
+            <div class="slide">
+                <div class="draggable">See the pretty rocks?</div>
+                <img class="draggable pretty-rocks" src="img/meadow-rocks-stones-882.jpg">
+                <div class="draggable"></div>
+                <div class="draggable"></div>
+            </div>
+        </div>
     </div>
+
 
 
     <script src="js/vendor.js"></script>

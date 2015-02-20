@@ -1,19 +1,37 @@
 //function for allowing items in list to be reordered drag and drop style
 app.reorderItems = function () {
-//bind events to the mousedown of certain elements
+//assign values to each slide item and cause it to update when reordered
+    function assignNumbers() {
+        $('.slide-number').each(function(index, item) {
+            $(item).text(index + 1);
+        });
+    }
+    //another way to write the above:
+    // function assignNumbers() {
+    //     var index = 1;
+    //     $('.slide-number').each(function(){
+    //         $(this).text(index);
+    //         index++;
+    //     });
+    // }
+
+    assignNumbers();
+
+    //bind events to the mousedown of certain elements
     $('.reorderable').mousedown(function(e) {
         var item = $(this);
+        var itemSlide = item.children('.thumbnail')
 
-//add a class to the item that we've grabbed
-        item.addClass('reordering');
+        //add a class to the item that we've grabbed
+        itemSlide.addClass('reordering');
 
-//Disallow text selection while dragging to prevent weird behavior
+        //Disallow text selection while dragging to prevent weird behavior
         $(document).on('selectstart dragstart', preventTextSelection);
 
-//continue reordering when mouse is moving
+        //continue reordering when mouse is moving
         $('body').on('mousemove', reorder);
 
-//end reordering when mouse up
+        //end reordering when mouse up
         $('body').on('mouseup', stopReordering);
 
     //prevents text selection
@@ -49,8 +67,9 @@ app.reorderItems = function () {
 
     //end the dragging of elements and get clear event binders
     function stopReordering() {
-        item.removeClass('reordering');
+        itemSlide.removeClass('reordering');
 
+        assignNumbers();
         $('body').off('mouseup', stopReordering);
         $('body').off('mousemove', reorder);
         $(document).off('selectstart dragstart', preventTextSelection);
